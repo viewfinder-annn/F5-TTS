@@ -135,6 +135,7 @@ class InputEmbedding(nn.Module):
         if drop_audio_cond:  # cfg for cond audio
             cond = torch.zeros_like(cond)
 
+        # print("DiT InputEmbedding:", x.shape, cond.shape, text_embed.shape)
         x = self.proj(torch.cat((x, cond, text_embed), dim=-1))
         x = self.conv_pos_embed(x) + x
         return x

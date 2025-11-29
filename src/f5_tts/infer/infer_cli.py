@@ -14,6 +14,9 @@ from hydra.utils import get_class
 from omegaconf import OmegaConf
 from unidecode import unidecode
 
+import sys
+sys.path.append("/mnt/workspace/zhangjunan/F5-TTS/src/")
+
 from f5_tts.infer.utils_infer import (
     cfg_strength,
     cross_fade_duration,
